@@ -66,7 +66,7 @@ body {
 
 .panel.active h3 {
     opacity: 1; /* Show the text */
-    transition: opacity 0.3s ease 0.6s; /* Add a smooth transition to the opacity property */
+    transition: opacity 0.3s ease 0.6s; /* Add a smooth transition to the opacity property with delay */
 }
 
 /* -------------------------------------------------------------------------  */
