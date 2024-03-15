@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* -------------------------------------------------------------------------  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------------------------------------------------  */
+
+body {
+    font-family: 'Muli', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* -------------------------------------------------------------------------  */
+
+.container {
+    display: flex;
+    width: 90vw; /* 90% of the viewport width */
+}
+
+/* -------------------------------------------------------------------------  */
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh; /* 80% of the viewport height */
+    border-radius: 50px;
+    color: white;
+    cursor: pointer; /* Change the cursor to a pointer when hovering over the panel */
+    flex: 0.5; /* Each panel takes up 50% of the container */
+    margin: 10px; /* 10px margin around each panel */
+    position: relative; /* Allows us to position the text in the center */
+    transition: flex 0.7s ease-in-out; /* Add a smooth transition to the flex property */
+}
+
+/* -------------------------------------------------------------------------  */
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute; /* Position the text in the center of the panel */
+    bottom: 20px; /* Position the text 20px from the bottom */
+    left: 20px; /* Position the text 20px from the left */
+    margin: 0; /* Remove the margin from the text */
+    opacity: 0; /* Hide the text */
+}
+
+/* -------------------------------------------------------------------------  */
+
+.panel.active {
+    flex: 5; /* Expand the panel to take up 5 times the width of the other panels */
+}
+
+/* -------------------------------------------------------------------------  */
+
+.panel.active h3 {
+    opacity: 1; /* Show the text */
+    transition: opacity 0.3s ease 0.6s; /* Add a smooth transition to the opacity property */
+}
+
+/* -------------------------------------------------------------------------  */
+
+@media (max-width: 580px) {
+    .container {
+        width: 100vw; /* 100% of the viewport width */
+    }
+
+    .panel:nth-child(4),
+    .panel:nth-child(5) {
+        display: none; /* Hide the 4th and 5th panels on smaller viewports */
+    }
+}
